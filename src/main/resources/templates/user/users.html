@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Username</th>
+        <th>Address name</th>
+    </tr>
+    <tr th:each="user: ${userList}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.surname}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.address.name}"></td>
+        <td>
+            <button><a th:href="@{/users/{id}(id = ${user.id})}">Edit user</a></button>
+
+        </td>
+    </tr>
+</table>
+<div class="container">
+    <button>
+        <a href="/users/addUser">Create new person</a>
+    </button>
+</div>
+
+<div class="container">
+
+    <form method="post" action="/users/search">
+
+                <input placeholder="Enter username"  type="text" name="username"/>
+
+            <input type="submit" value="Find user">
+    </form>
+
+</div>
+</body>
+</html>

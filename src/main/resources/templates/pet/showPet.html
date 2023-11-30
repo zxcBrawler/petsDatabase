@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Weight</th>
+        <th>TypePet</th>
+    </tr>
+    <tr>
+        <td th:text="${pet.get().getId()}"></td>
+        <td th:text="${pet.get().getName()}"></td>
+        <td th:text="${pet.get().getAge()}"></td>
+        <td th:text="${pet.get().getWeight()}"></td>
+        <td th:text="${pet.get().getTypePet().getName()}"></td>
+    </tr>
+</table>
+
+<div class="container">
+    <button> <a th:href="@{/pets/{id}/editPet (id = ${pet.get().getId()})}">Edit</a>
+    </button>
+    <form th:method="delete" th:action="@{/pets/{id} (id = ${pet.get().getId()})}">
+        <input type="submit" value="Delete">
+    </form>
+</div>
+
+</body>
+</html>

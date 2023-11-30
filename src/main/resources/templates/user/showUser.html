@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Username</th>
+    </tr>
+    <tr>
+        <td th:text="${users.id}"></td>
+        <td th:text="${users.name}"></td>
+        <td th:text="${users.surname}"></td>
+        <td th:text="${users.age}"></td>
+        <td th:text="${users.username}"></td>
+    </tr>
+</table>
+<div class="container">
+    <button>
+        <a th:href="@{/users/{id}/editUser (id = ${users.id})}">Edit
+        </a>
+    </button>
+    <form th:method="delete" th:action="@{/users/{id} (id = ${users.id})}">
+        <input type="submit" value="delete">
+    </form>
+</div>
+
+</body>
+</html>

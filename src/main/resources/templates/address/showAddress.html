@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table" style="">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>currentAddress</th>
+
+    </tr>
+    <tr>
+        <td th:text="${address.id}"></td>
+        <td th:text="${address.name}"></td>
+        <td th:text="${address.currentAddress}"></td>
+    </tr>
+</table>
+
+<div class="container">
+    <button>
+        <a th:href="@{/address/{id}/editAddress (id = ${address.id})}">Edit</a>
+    </button>
+
+    <form th:method="delete" th:action="@{/address/{id} (id = ${address.id})}">
+        <input type="submit" value="Delete">
+    </form>
+</div>
+</body>
+</html>

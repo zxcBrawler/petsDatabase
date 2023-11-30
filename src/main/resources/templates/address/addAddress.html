@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+<form th:method="POST" th:action="@{/address}" th:object="${address}">
+    <label for="name">Enter name</label>
+    <input type="text" id="name" th:field="*{name}">
+    <label for="currentAddress">Enter currentAddress</label>
+    <input type="text" id="currentAddress" th:field="*{currentAddress}">
+
+    <input type="submit" value="Create">
+</form>
+</body>
+</html>

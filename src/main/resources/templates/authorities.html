@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Username</th>
+        <th>Address name</th>
+        <th>Authority</th>
+    </tr>
+    <tr th:each="user: ${userList}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.surname}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.address.name}"></td>
+        <td th:text="${user.roles}"></td>
+        <td>
+            <button><a th:href="@{/authorities/{id}(id = ${user.id})}">Edit user</a></button>
+
+        </td>
+    </tr>
+</table>
+</body>
+</html>

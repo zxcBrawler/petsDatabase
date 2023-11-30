@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form th:action="${'/petFood'}" method="post">
+  <label>Select pet</label>
+  <select name = "namePet">
+    <div th:each="element : ${petList}">
+      <option th:text="${element.name}"></option>
+    </div>
+  </select> <br>
+  <label>Select food</label>
+  <select name = "nameFood">
+    <div th:each="element : ${foodList}">
+      <option th:text="${element.nameFood}"></option>
+    </div>
+  </select> <br>
+  <input type="submit" value="Create">
+</form>
+
+</body>
+</html>

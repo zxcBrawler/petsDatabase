@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form th:method="POST" th:action="@{/mans}" th:object="${man}">
+    <label for="name">Enter name</label>
+    <input type="text" id="name" th:field="*{name}">
+    <label for="address">Enter address</label>
+    <input type="text" id="address" th:field="*{address}">
+    <label for="yearFormed">Enter yearFormed</label>
+    <input type="text" id="yearFormed" th:field="*{yearFormed}">
+    <input type="submit" value="Create">
+</form>
+
+</body>
+</html>

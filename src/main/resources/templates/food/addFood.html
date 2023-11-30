@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form th:method="POST" th:action="@{/food}" th:object="${food}">
+    <label for="nameFood">Enter name</label>
+    <input type="text" id="nameFood" th:field="*{nameFood}">
+    <label for="mainIngredient">Enter mainIngredient</label>
+    <input type="text" id="mainIngredient" th:field="*{mainIngredient}">
+    <input type="submit" value="Create">
+</form>
+
+</body>
+</html>

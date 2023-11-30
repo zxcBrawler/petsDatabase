@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/country/{id}(id = ${country.id})}" th:object="${country}">
+    <label for="name">Enter name</label>
+    <input type="text" id="name" th:field="*{name}"> <br>
+    <label for="continent">Enter continent</label>
+    <input type="text" id="continent" th:field="*{continent}"> <br>
+    <label for="dateFormed">Enter date</label>
+    <input type="text" id="dateFormed" th:field="*{dateFormed}"> <br>
+    <input type="submit" value="Update">
+</form>
+
+</body>
+</html>

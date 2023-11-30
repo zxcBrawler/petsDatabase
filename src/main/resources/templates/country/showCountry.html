@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<table class="styled-table" style="">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Continent</th>
+        <th>Date Formed</th>
+    </tr>
+    <tr>
+        <td th:text="${country.get().getId()}"></td>
+        <td th:text="${country.get().getName()}"></td>
+        <td th:text="${country.get().getContinent()}"></td>
+        <td th:text="${country.get().getDateFormed()}"></td>
+    </tr>
+</table>
+
+<div class="container">
+    <button>
+        <a th:href="@{/country/{id}/editCountry (id = ${country.get().getId()})}">Edit</a>
+    </button>
+
+    <form th:method="delete" th:action="@{/country/{id} (id = ${country.get().getId()})}">
+        <input type="submit" value="Delete">
+    </form>
+</div>
+
+
+</body>
+</html>

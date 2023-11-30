@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/authorities/{id}(id = ${user.get().getId()})}" th:object="${user}">
+    <input type="text" id="username" th:field="*{username}"> <br>
+    <label >Select address</label>
+    <select name = "roles">
+        <div th:each="element : ${roles}">
+            <option th:text="${element.name}"></option>
+        </div>
+    </select> <br>
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>

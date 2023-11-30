@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/mans/{id}(id = ${man.get().getId()})}" th:object="${man}">
+    <label for="name">Enter name</label>
+    <input type="text" id="name" th:field="*{name}"> <br>
+    <label for="address">Enter surname</label>
+    <input type="text" id="address" th:field="*{address}"> <br>
+    <label for="yearFormed">Enter age</label>
+    <input type="text" id="yearFormed" th:field="*{yearFormed}"> <br>
+    <input type="submit" value="Update">
+</form>
+
+</body>
+</html>

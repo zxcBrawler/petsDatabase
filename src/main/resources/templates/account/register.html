@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<div th:if="${message}">
+    Пользователь уже существует
+</div>
+<form th:action="@{/register}" method="post">
+    <div><label> Логин : <input type="text" name="username"/> </label></div>
+    <div><label> Пароль : <input type="password" name="password"/> </label></div>
+    <div><label> Возраст : <input type="number" name="age"/> </label></div>
+    <div><label> Имя : <input type="text" name="name"/> </label></div>
+    <div><label> Фамилия : <input type="text" name="surname"/> </label></div>
+    <label>Адрес</label>
+    <select name = "nameAddress">
+        <div th:each="element : ${address}">
+            <option th:text="${element.name}"></option>
+        </div>
+    </select> <br>
+    <div><input type="submit" value="Регистрация"/></div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Year formed</th>
+    </tr>
+    <tr th:each="man: ${manList}">
+        <td th:text="${man.name}"></td>
+        <td th:text="${man.address}"></td>
+        <td th:text="${man.yearFormed}"></td>
+        <td>
+            <button><a th:href="@{/mans/{id}(id = ${man.id})}">Edit man</a></button>
+
+        </td>
+    </tr>
+</table>
+<div class="container">
+    <button>
+        <a href="/mans/addMan">create new man</a>
+    </button>
+</div>
+
+</body>
+</html>

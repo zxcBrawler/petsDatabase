@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/food/{id}(id = ${food.get().getId()})}" th:object="${food}">
+    <label for="nameFood">Enter nameFood</label>
+    <input type="text" id="nameFood" th:field="*{nameFood}"> <br>
+    <label for="mainIngredient">Enter mainIngredient</label>
+    <input type="text" id="mainIngredient" th:field="*{mainIngredient}"> <br>
+    <input type="submit" value="Update">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table">
+    <tr>
+        <th>Name</th>
+        <th>Main Ingredient</th>
+    </tr>
+    <tr th:each="food: ${foodList}">
+        <td th:text="${food.nameFood}"></td>
+        <td th:text="${food.mainIngredient}"></td>
+        <td>
+            <button><a th:href="@{/food/{id}(id = ${food.id})}">Edit food</a></button>
+
+        </td>
+    </tr>
+</table>
+<div class="container">
+    <button>
+        <a href="/food/addFood">create new food</a>
+    </button>
+</div>
+</body>
+</html>

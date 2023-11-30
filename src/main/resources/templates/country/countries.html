@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <table class="styled-table" style="">
+        <tr>
+            <th>Name</th>
+            <th>Continent</th>
+            <th>Date Formed</th>
+        </tr>
+        <tr th:each="country: ${countryList}">
+            <td th:text="${country.name}"></td>
+            <td th:text="${country.continent}"></td>
+            <td th:text="${country.dateFormed}"></td>
+            <td>
+                <button><a th:href="@{/country/{id}(id = ${country.id})}">Edit country</a></button>
+
+            </td>
+        </tr>
+    </table>
+    <div class="container">
+        <button><a href="/country/addCountry">Create new country</a></button>
+    </div>
+</body>
+</html>

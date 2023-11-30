@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form th:method="PUT" th:action="@{/address/{id}(id = ${address.id})}" th:object="${address}">
+    <label for="name">Enter name</label>
+    <input type="text" id="name" th:field="*{name}"> <br>
+    <label for="currentAddress">Enter current address</label>
+    <input type="text" id="currentAddress" th:field="*{currentAddress}"> <br>
+
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>

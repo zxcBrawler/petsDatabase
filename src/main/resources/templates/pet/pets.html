@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Weight</th>
+        <th>Type pet</th>
+    </tr>
+    <tr th:each="pet: ${petList}">
+        <td th:text="${pet.name}"></td>
+        <td th:text="${pet.age}"></td>
+        <td th:text="${pet.weight}"></td>
+        <td th:text="${pet.typePet.name}"></td>
+        <td>
+            <button><a th:href="@{/pets/{id}(id = ${pet.id})}">Edit pet</a></button>
+
+        </td>
+    </tr>
+</table>
+<div class="container">
+<button><a href="/pets/addPet">Create new pet</a></button>
+    </div>
+</body>
+</html>

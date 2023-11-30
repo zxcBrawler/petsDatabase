@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table">
+    <tr>
+        <th>Name</th>
+
+    </tr>
+    <tr th:each="type: ${typeList}">
+        <td th:text="${type.name}"></td>
+
+        <td>
+            <button><a th:href="@{/typePet/{id}(id = ${type.id})}">Edit type</a></button>
+
+        </td>
+    </tr>
+</table>
+<div class="container">
+    <button>
+        <a href="/typePet/addTypePet">Create new pet type</a>
+    </button>
+</div>
+
+</body>
+</html>

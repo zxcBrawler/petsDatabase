@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Main Ingredient</th>
+    </tr>
+    <tr>
+        <td th:text="${food.get().getId()}"></td>
+        <td th:text="${food.get().getNameFood()}"></td>
+        <td th:text="${food.get().getMainIngredient()}"></td>
+        <td>
+            <button><a th:href="@{/food/{id}(id = ${food.get().getId()})}">Edit food</a></button>
+
+        </td>
+    </tr>
+</table>
+<div class="container">
+    <button><a th:href="@{/food/{id}/editFood (id = ${food.get().getId()})}">Edit</a> </button>
+    <form th:method="delete" th:action="@{/food/{id} (id = ${food.get().getId()})}">
+        <input type="submit" value="Delete">
+    </form>
+</div>
+</body>
+</html>

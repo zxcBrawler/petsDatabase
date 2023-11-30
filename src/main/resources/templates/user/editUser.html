@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/users/{id}(id = ${users.id})}" th:object="${users}">
+    <label for="name">Enter name</label>
+    <input type="text" id="name" th:field="*{name}"> <br>
+    <label for="surname">Enter surname</label>
+    <input type="text" id="surname" th:field="*{surname}"> <br>
+    <label for="age">Enter age</label>
+    <input type="text" id="age" th:field="*{age}"> <br>
+    <label for="username">Enter username</label>
+    <input type="text" id="username" th:field="*{username}"> <br>
+    <label >Select address</label>
+    <select name = "nameAddress">
+        <div th:each="element : ${address}">
+            <option th:text="${element.name}"></option>
+        </div>
+    </select> <br>
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>

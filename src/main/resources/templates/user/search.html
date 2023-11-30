@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<table class="styled-table">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Age</th>
+    <th>Username</th>
+  </tr>
+  <tr>
+    <td th:text="${users.id}"></td>
+    <td th:text="${users.name}"></td>
+    <td th:text="${users.surname}"></td>
+    <td th:text="${users.age}"></td>
+    <td th:text="${users.username}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
